@@ -1160,6 +1160,7 @@ P.tooltip = {
 	targetInfo = true,
 	playerTitles = true,
 	guildRanks = true,
+	itemDetails = "ID_ONLY",
 	itemCount = "BAGS_ONLY",
 	spellID = true,
 	npcID = true,
