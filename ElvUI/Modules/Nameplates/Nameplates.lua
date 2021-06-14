@@ -27,6 +27,7 @@ local UnitGUID = UnitGUID
 local UnitHealthMax = UnitHealthMax
 local UnitIsFriend = UnitIsFriend
 local UnitIsPlayer = UnitIsPlayer
+local UnitPVPName = UnitPVPName
 local UnitIsUnit = UnitIsUnit
 local UnitReaction = UnitReaction
 local UnitName = UnitName
@@ -715,6 +716,10 @@ function NP:SetTargetFrame(frame)
 
 			self:SetPlateFrameLevel(frame, self:GetPlateFrameLevel(frame), true)
 
+            if UnitIsPlayer("target") then
+                frame.UnitName = UnitPVPName("target")
+            end
+			
 			if self.db.useTargetScale then
 				self:SetFrameScale(frame, (frame.ThreatScale or 1) * self.db.targetScale)
 			end
